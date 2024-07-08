@@ -1,0 +1,56 @@
+.topbar {
+    width: 100vw;
+    height: 24px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+  }
+  
+  .topbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .apple-logo {
+    height: 14px;
+    margin-right: 10px;
+    margin-left: 20px;
+    -webkit-mask: url('../../assets/Apple.jpg') no-repeat 50% 50%;
+    mask: url('../../assets/Apple.jpg') no-repeat 50% 50%;
+  }
+  
+  .menu-items {
+    display: flex;
+  }
+  
+  .menu-item {
+    color: #000;
+    font-size: 12px;
+    margin-right: 15px;
+  }
+  
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .status-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .status-icons svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+  
+  .date-time {
+    color: #000;
+    font-size: 12px;
+  }

@@ -1,0 +1,15 @@
+#body{
+  width: 100vw;
+  height: 100vh;
+  background-image: url('./assets/Sonoma.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#iconBody{
+  width: 98vw;
+  height: 20vh;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2vw;
+}

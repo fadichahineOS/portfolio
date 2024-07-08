@@ -1,0 +1,57 @@
+.vscode-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    width: 80px; /* Adjust as needed */
+  }
+  
+  .vscode-icon-container:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .vscode-icon-container.selected {
+    background-color: rgba(0, 122, 204, 0.3);
+  }
+  
+
+
+  #vsDeskIcon {
+    height: 64px;
+  }
+  
+  .vscode-label {
+    margin-top: 4px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 4px;
+    border-radius: 4px;
+    max-width: 200%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  @media (max-width: 1366px) {
+    .vscode-icon-container {
+      width: 70px;
+    }
+    .vscode-icon {
+      width: 56px;
+      height: 56px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .vscode-icon-container {
+      width: 60px;
+    }
+    .vscode-icon {
+      width: 48px;
+      height: 48px;
+    }
+  }
