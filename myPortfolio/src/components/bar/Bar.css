@@ -18,8 +18,6 @@
     height: 14px;
     margin-right: 10px;
     margin-left: 20px;
-    -webkit-mask: url('../../assets/Apple.jpg') no-repeat 50% 50%;
-    mask: url('../../assets/Apple.jpg') no-repeat 50% 50%;
   }
   
   .menu-items {

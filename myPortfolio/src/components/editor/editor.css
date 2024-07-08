@@ -1,0 +1,270 @@
+.vscode-editor {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+.vscode-topbar {
+  height: 4.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #002c39;
+  padding: 0 0.5rem;
+}
+
+.vscode-window-controls {
+  display: flex;
+  align-items: center;
+}
+
+.window-control {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: none;
+  margin-right: 0.5rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+.window-control.close { background-color: #ff5f56; }
+.window-control.minimize { background-color: #ffbd2e; }
+.window-control.maximize { background-color: #27c93f; }
+.window-control:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.vscode-navigation {
+  display: flex;
+  margin-right: 1rem;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: #d4d4d4;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.vscode-search-bar {
+  height: 2vh;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  background-color: #0e3743;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.search-text {
+  margin-left: 5px;
+}
+
+.vscode-main {
+  display: flex;
+  height: calc(90vh - 4.5vh);
+}
+
+.vscode-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  background-color: #003847;
+}
+
+.vscode-sidebar-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.vscode-sidebar-buttons {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+.vscode-sidebar-options {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 0;
+}
+
+.sidebar-button {
+  background: none;
+  border: none;
+  color: #858585;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-button:hover {
+  color: #d4d4d4;
+}
+
+.vscode-sidebar-content {
+  width: 250px;
+  background-color: #00212b;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vscode-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+.options-button {
+  background: none;
+  border: none;
+  color: #d4d4d4;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.vscode-section {
+  padding: 0 1rem;
+  background-color: #1b353d;
+}
+
+
+
+.vscode-section h3 {
+  font-size: 0.75rem;
+  color: #bbbbbb;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+#vscode-section {
+  padding: 0 1rem;
+}
+
+
+
+#vscode-section h3 {
+  width: 100%;
+  font-size: 0.75rem;
+  color: #bbbbbb;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.vscode-folder {
+  width: 100%;
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+}
+
+.vscode-file {
+  width: 250px;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0;
+  transition: background-color 0.2s ease;
+}
+
+.vscode-file:hover {
+  background-color: #003847;
+}
+
+.vscode-bottom-sections {
+  margin-top: auto;
+}
+
+.chevron-icon, .file-icon {
+  margin-right: 0.25rem;
+}
+
+.vscode-content-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.vscode-tabs {
+  display: flex;
+  background-color: #004052;
+}
+
+.vscode-tab {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-right: 1.5px solid #003b4b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.vscode-tab.active {
+  background-color: #012b37;
+}
+
+.tab-content {
+  display: flex;
+  align-items: center;
+}
+
+.tab-icon {
+  margin-right: 0.25rem;
+}
+
+.close-tab-icon {
+  margin-left: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.vscode-tab:hover .close-tab-icon,
+.vscode-tab.active .close-tab-icon {
+  opacity: 0.7;
+}
+
+.close-tab-icon:hover {
+  opacity: 1 !important;
+}
+
+.vscode-content {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: #012b36;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vscode-content h1 {
+  font-size: 1.5rem;
+  color: #569cd6;
+}
+
