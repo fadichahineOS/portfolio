@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-
-
-
-
-
-
+import ReactMarkdown from 'react-markdown';
 import {
   MoveLeft,
   MoveRight,
@@ -44,10 +39,86 @@ interface Tab {
   content: string;
 }
 
+const fileContents: { [key: string]: string } = {
+  "About.md": `# About Me
+
+Hello! I'm Fadi Chahine, a passionate and creative software developer with a keen interest in building innovative solutions. With a strong foundation in React.js, Node.js, andExpress.js, I strive to create efficient, scalable, and user-friendly applications.
+
+## My Philosophy
+
+I believe in writing clean, maintainable code and continuously learning new technologies to stay at the forefront of the ever-evolving tech landscape. I also believe in drawing inspiration from the world's disciplines to find solutions.
+
+## Hobbies and Interests
+
+Outside of coding, I enjoy learning and playing the guitar. I also enjoy hitting the gym, reading a book, and going for long walks with friends. A little bit low-tech for a techie, I know, but in today's world checking out is just as important as checking in.`,
+
+  "Education.md": `# Education
+
+## University of Glasgow 
+- **Degree:** MSCi in Software Engineering
+- **Graduation Year:** 2019-2024
+
+### Key Courses:
+- Data Structures and Algorithms
+- Web Programming 2
+- Functional Programming
+- Artificial Intelligence
+- Secured Software Engineering
+
+## Award & Achievements
+- Honours, Division One, Second Class  - University of Glasgow, 2024
+- Dissertation on the impact of COVID-19 on the IETF - University of Glasgow, 2024`,
+
+  "Experience.md": `# Professional Experience
+
+## Glasgow University Software Service - Software Developer - Part-Time - Glasgow
+**Duration:** February 2022 - June 2022
+
+- Developed information platforms for investment banks and bots for data
+extraction from Slack channels for universities across india.
+- Developer an information platform in React for castlebank investment. 
+
+## Glasgow University Software Service - Software Developer - Full-Time - Glasgow
+**Duration:** June 2022 - October 2022
+
+- Ported R application that measures chance of remission with psychosis to Python.
+
+
+## Infracom Communication Systems Installation - Full-Time - Dubai
+**Duration:** October 2022 - July 2023
+
+- Created KPI tracking platforms in React for customer service centers for multiple 
+private and government entities such as: ADCB(Abu Dhabi Commercial Bank), 
+MBRHE(Mohammad Bin Rashid Housing Establishment), FAB(First Abu Dhabi Bank). 
+- Implemented custom widgets for clients in Angular.js. 
+- Created a custom backend in spring for a new concierge application for MAERSK Jakarta. 
+- Carried out on-site network support for multiple of the previously mentioned clients. 
+
+`,
+
+  "Projects.md": `# Projects
+
+## Rangouts
+**Link:** Rangouts.com
+
+**Description:** Rangouts was a social media platform meant to solve the feeling of being lost in the big city
+by allowing users to post events onto a map for other users to see and join.
+
+**Technologies Used:**
+- Frontend: React, SwiftUI
+- Backend: Node.js, Express.js
+- Database: PostgreSQL
+
+**Key Features:**
+- Live map with events visible 
+- Ticket
+- Picture feed for events.
+`
+};
+
 const VSCodeStatusBar: React.FC = () => {
   return (
     <div className="vscode-status-bar">
-
       <div className="status-bar-left">
         <div id="remoteEnv">
           <ChevronsRightLeft size={15}/>
@@ -83,7 +154,10 @@ const Editor: React.FC<VSCodeEditorProps> = ({ isOpen, onClose }) => {
 
   const openTab = (fileName: string) => {
     if (!activeTabs.some((tab) => tab.name === fileName)) {
-      const newTab: Tab = { name: fileName, content: `Content of ${fileName}` };
+      const newTab: Tab = { 
+        name: fileName, 
+        content: fileContents[fileName] || `Content of ${fileName}` 
+      };
       setActiveTabs([...activeTabs, newTab]);
     }
     setActiveTab(fileName);
@@ -253,12 +327,9 @@ const Editor: React.FC<VSCodeEditorProps> = ({ isOpen, onClose }) => {
           </div>
           <div className="vscode-content">
             {activeTab ? (
-              <div>
-                <h1># {activeTab}</h1>
-                <p>
-                  {activeTabs.find((tab) => tab.name === activeTab)?.content}
-                </p>
-              </div>
+              <ReactMarkdown>
+                {activeTabs.find((tab) => tab.name === activeTab)?.content || ''}
+              </ReactMarkdown>
             ) : (
               <div
                 style={{
