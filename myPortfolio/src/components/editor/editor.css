@@ -131,7 +131,10 @@
 }
 
 .vscode-sidebar-bottom {
-  padding-bottom: 10px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
 }
 
 .vscode-sidebar-buttons {
