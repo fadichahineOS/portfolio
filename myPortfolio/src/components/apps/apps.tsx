@@ -20,7 +20,7 @@ interface AppIcon {
 }
 
 const Apps: React.FC = () => {
-  const [apps, setApps] = useState<AppIcon[]>([
+  const [apps, _setApps] = useState<AppIcon[]>([
     { name: 'Finder', icon: FinderIcon },
     { name: 'Safari', icon: SafariIcon },
     { name: 'Messages', icon: MessagesIcon },
@@ -33,7 +33,7 @@ const Apps: React.FC = () => {
     { name: 'System Preferences', icon: SystemPreferencesIcon },
   ]);
 
-  const [recentApps, setRecentApps] = useState<AppIcon[]>([
+  const [recentApps, _setRecentApps] = useState<AppIcon[]>([
     { name: 'Visual Studio Code', icon: VSCodeIcon, isRecent: true },
     { name: 'Terminal', icon: TerminalIcon, isRecent: true },
   ]);
